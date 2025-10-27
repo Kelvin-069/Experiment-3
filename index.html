@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kelvin — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style> html { scroll-behavior: smooth; } </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Kelvin</div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger" aria-label="menu" role="button" tabindex="0">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Something About me</h1>
+    <img src="src/pfp.jpg" alt="My majestic face in HD" class="profile-pic">
+
+    <section id="about">
+      <p><strong>Identity name in Human Society :</strong> Kelvin Kumar Basumatary</p>
+      <p><strong>About me:</strong><br>
+         Hello! I’m a Computer Science student at the Central Institute of Technology.
+         I enjoy learning about technology, solving problems, and sometimes creating new ones by mistake.
+         I like to stay a bit anonymous — not because I’m a hacker, but because I enjoy peace and privacy while my code crashes in silence.
+      </p>
+    </section>
+
+    <section id="education">
+      <h2>My Education</h2>
+      <ul>
+        <li>KG - Standard II : Sun Shine English School, Sapatgram</li>
+        <li>Standard III – X : Don Bosco H.S School, Kokrajhar</li>
+        <li>XI - XII : Science College, Kokrajhar</li>
+        <li>UG : Central Institute Of Technology, Kokrajhar</li>
+        <li>To be continued ...</li>
+      </ul>
+    </section>
+
+    <section id="portfolio">
+      <h2>My Portfolio</h2>
+      <p>The one you’re looking at right now 😎 A simple and responsive personal portfolio built using HTML, CSS, and a touch of caffeine.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: u23cse1049@cit.ac.in</p>
+      <p><a href="https://github.com/Kelvin-069" target="_blank" rel="noopener">GitHub</a></p>
+    </section>
+  </div>
+
+  <script>
+    (function () {
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      if (!hamburger) {
+        console.error("Missing element: #hamburger");
+        return;
+      }
+      if (!navLinks) {
+        console.error("Missing element: #navLinks");
+        return;
+      }
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+
+      hamburger.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          navLinks.classList.toggle("show");
+        }
+      });
+
+      const links = navLinks.querySelectorAll("a");
+      links.forEach(link => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("show");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
